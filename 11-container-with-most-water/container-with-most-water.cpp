@@ -13,7 +13,7 @@ public:
             w=j-i;
             area=h*w;
             max1=max(area,max1);
-            if(height[i]>=height[j]){
+            if(height[i]>height[j]){
                 j--;
             }
             else{
