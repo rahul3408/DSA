@@ -6,16 +6,15 @@ public:
         for(int i=1;i<n;i++){
              m[i]=m[i-1]*nums[i-1];
         }
-        vector<int> m1(n,1);
+        int rp=1;
+        vector<int> ans;
         for(int i=n-1;i>=0;i--){
             if(i!=n-1){
-            m1[i]=m1[i+1]*nums[i+1];
+            rp=rp*nums[i+1];
             }
+            ans.push_back(rp*m[i]);
         }
-        vector<int> ans;
-        for(int i=0;i<n;i++){
-            ans.push_back(m[i]*m1[i]);
-        }
+        reverse(ans.begin(),ans.end());
         return ans;
         
     }
