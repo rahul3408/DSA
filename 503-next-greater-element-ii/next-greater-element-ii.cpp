@@ -13,7 +13,6 @@ public:
             }
             if(!s.empty()){
                 ans[i]=s.top();
-                s.push(temp[i]);
             }
             s.push(temp[i]);
         }
