@@ -9,6 +9,9 @@ public:
             c++;
             s--;
         }
+        if(c==0){
+            return num;
+        }
         for(int i=0;i<n-c;i++){
             temp.push_back(num[i]);
         }
