@@ -5,6 +5,7 @@ public:
         int max1=-1;
         int n=nums.size();
         int countzero=0;
+        int count=0;
         for(int j=0;j<n;j++){
             if(nums[j]==0){
                 countzero++;
