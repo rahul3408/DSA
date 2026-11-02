@@ -4,46 +4,22 @@ public:
         int n=s.length();
         int i=0;
         int j=n-1;
-        int count=0;
         while(i<j){
-            if(s[i]==s[j]){
-                i++;
-                j--;
+            if(s[i]!=s[j]){
+            return palindrome(s,i+1,j)||palindrome(s,i,j-1);  
             }
-            else if(s[i]!=s[j]){
-              int i1=i+1;
-              int j1=j;
-              bool p=true;
-              bool p1=true;
-              while(i1<j1){
-                if(s[i1]==s[j1]){
-                    i1++;
-                    j1--;
-                }
-                else{
-                    p=false;
-                    break;
-                }
-              }
-                int i2=i;
-                int j2=j-1;
-                while(i2<j2){
-                    if(s[i2]==s[j2]){
-                        i2++;
-                        j2--;
-                    }
-                    else{
-                        p1=false;
-                        break;
-                    }
-                }
-                if(p==true||p1==true){
-                  return true;
-                } 
-                else{
-                    return false;
-                }
+            i++;
+            j--;
+        }
+        return true;
+    }
+    bool palindrome(string s,int l,int r){
+        while(l<r){
+            if(s[l]!=s[r]){
+                return false;
             }
+            l++;
+            r--;
         }
         return true;
     }
