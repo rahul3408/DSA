@@ -1,16 +1,25 @@
 class Solution {
 public:
     bool isMonotonic(vector<int>& nums) {
-        vector<int> nums2=nums;
-        vector<int> nums3=nums;
-        sort(nums3.begin(),nums3.end());
-        sort(nums2.begin(),nums2.end(),greater<int>());
-        if(nums==nums2||nums==nums3){
+        int n=nums.size();
+        int count1=0;
+        int count2=0;
+        for(int i=0;i<n-1;i++){
+            if(nums[i]>nums[i+1]){
+                count1++;
+            }
+            else if(nums[i]<nums[i+1]){
+                count2++;
+            }
+            else{
+                count1++;
+                count2++;
+            }
+        }
+        if(count1==(n-1)||count2==(n-1)){
             return true;
         }
-        else{
-            return false;
-        }
+        return false;
         
     }
 };
